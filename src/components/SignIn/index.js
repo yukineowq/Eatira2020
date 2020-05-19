@@ -16,11 +16,13 @@ import {
 } from "semantic-ui-react";
 
 const SignInPage = () => (
-  <div>
-    <h1 style={{ color: "red" }}>Sign In</h1>
+  <div
+    style={{
+      backgroundImage: `url(https://i.imgur.com/NFSmh5Y.jpg)`,
+      backgroundSize: "cover",
+    }}
+  >
     <SignInForm />
-    <PasswordForgetLink />
-    <SignUpLink />
   </div>
 );
 
@@ -63,39 +65,16 @@ class SignInFormBase extends Component {
     const isInvalid = password === "" || email === "";
 
     return (
-      //   <form onSubmit={this.onSubmit}>
-      //     <input
-      //       name="email"
-      //       value={email}
-      //       onChange={this.onChange}
-      //       type="text"
-      //       placeholder="Email Address"
-      //     />
-      //     <input
-      //       name="password"
-      //       value={password}
-      //       onChange={this.onChange}
-      //       type="password"
-      //       placeholder="Password"
-      //     />
-      //     <button disabled={isInvalid} type="submit">
-      //       Sign In
-      //     </button>
-
-      //     {error && <p>{error.message}</p>}
-      //   </form>
-
       <Grid
         textAlign="center"
         style={{ height: "100vh" }}
         verticalAlign="middle"
       >
         <Grid.Column style={{ maxWidth: 450 }}>
-          <Header as="h2" color="teal" textAlign="center">
-            <Image src="https://i.imgur.com/q3ekeqj.jpg" /> Log-in to your
-            account
+          <Header as="h1" color="teal" textAlign="center">
+            <Image src="https://i.imgur.com/48NIKsN.jpg" />
           </Header>
-          <Form size="large">
+          <Form size="large" onSubmit={this.onSubmit}>
             <Segment stacked>
               <Form.Input
                 fluid
@@ -117,9 +96,8 @@ class SignInFormBase extends Component {
                 placeholder="Password"
                 type="password"
               />
-
               <Button
-                color="teal"
+                color="orange"
                 fluid
                 size="large"
                 disabled={isInvalid}
@@ -131,7 +109,10 @@ class SignInFormBase extends Component {
             </Segment>
           </Form>
           <Message>
-            New to us? <a href="/signup">Sign Up</a>
+            <SignUpLink />
+          </Message>
+          <Message>
+            <PasswordForgetLink />
           </Message>
         </Grid.Column>
       </Grid>
