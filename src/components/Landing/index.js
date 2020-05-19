@@ -89,6 +89,7 @@ class DesktopContainer extends Component {
             textAlign="center"
             style={{ minHeight: 700, padding: "1em 0em" }}
             vertical
+            color="orange"
           >
             <Menu
               fixed={fixed ? "top" : null}
@@ -218,6 +219,9 @@ ResponsiveContainer.propTypes = {
 const HomepageLayout = () => (
   <ResponsiveContainer>
     <Segment style={{ padding: "8em 0em" }} vertical>
+      <Header as="h1" textAlign="center">
+        asdhkj
+      </Header>
       <Grid container stackable verticalAlign="middle">
         <Grid.Row>
           <Grid.Column width={8}>

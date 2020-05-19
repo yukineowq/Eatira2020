@@ -3,10 +3,15 @@ import { Link } from "react-router-dom";
 
 import { withFirebase } from "../Firebase";
 import * as ROUTES from "../../constants/routes";
+import { Button, Form, Grid, Header, Image, Segment } from "semantic-ui-react";
 
 const PasswordForgetPage = () => (
-  <div>
-    <h1>PasswordForget</h1>
+  <div
+    style={{
+      backgroundImage: `url(https://i.imgur.com/NFSmh5Y.jpg)`,
+      backgroundSize: "cover",
+    }}
+  >
     <PasswordForgetForm />
   </div>
 );
@@ -48,20 +53,42 @@ class PasswordForgetFormBase extends Component {
     const isInvalid = email === "";
 
     return (
-      <form onSubmit={this.onSubmit}>
-        <input
-          name="email"
-          value={this.state.email}
-          onChange={this.onChange}
-          type="text"
-          placeholder="Email Address"
-        />
-        <button disabled={isInvalid} type="submit">
-          Reset My Password
-        </button>
+      <Grid
+        textAlign="center"
+        style={{ height: "100vh" }}
+        verticalAlign="middle"
+      >
+        <Grid.Column style={{ maxWidth: 450 }}>
+          <Header as="h1" color="teal" textAlign="center">
+            <Image src="https://i.imgur.com/48NIKsN.jpg" />
+          </Header>
+          <Form size="large" onSubmit={this.onSubmit}>
+            <Segment stacked>
+              <Form.Input
+                fluid
+                icon="user"
+                iconPosition="left"
+                name="email"
+                value={this.state.email}
+                onChange={this.onChange}
+                placeholder="Email address"
+                type="text"
+              />
 
-        {error && <p>{error.message}</p>}
-      </form>
+              <Button
+                color="orange"
+                fluid
+                size="large"
+                disabled={isInvalid}
+                type="submit"
+              >
+                Reset My Password
+              </Button>
+              {error && <p>{error.message}</p>}
+            </Segment>
+          </Form>
+        </Grid.Column>
+      </Grid>
     );
   }
 }

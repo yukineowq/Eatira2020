@@ -1,4 +1,5 @@
-import React from "react";
+import React, { Component } from "react";
+import { Menu } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 import SignOutButton from "../SignOut";
@@ -15,43 +16,37 @@ const Navigation = () => (
 );
 
 const NavigationAuth = () => (
-  <ul>
-    <li>
-      <Link to={ROUTES.LANDING}>Landing</Link>
-    </li>
-    <li>
+  <Menu>
+    <Menu.Item>
       <Link to={ROUTES.HOME}>Home</Link>
-    </li>
-    <li>
+    </Menu.Item>
+    <Menu.Item>
       <Link to={ROUTES.ACCOUNT}>Account</Link>
-    </li>
-    <li>
+    </Menu.Item>
+    <Menu.Item>
       <Link to={ROUTES.PROFILE}>Profile</Link>
-    </li>
-    <li>
+    </Menu.Item>
+    <Menu.Item>
       <Link to={ROUTES.PLAN}>Plan</Link>
-    </li>
-    <li>
+    </Menu.Item>
+    <Menu.Item>
       <Link to={ROUTES.SAVED_POSTS}>Saved Posts</Link>
-    </li>
-    <li>
-      <Link to={ROUTES.ADMIN}>Admin</Link>
-    </li>
-    <li>
+    </Menu.Item>
+    <Menu.Item>
       <SignOutButton />
-    </li>
-  </ul>
+    </Menu.Item>
+  </Menu>
 );
 
 const NavigationNonAuth = () => (
-  <ul>
-    <li>
+  <Menu>
+    <Menu.Item>
       <Link to={ROUTES.LANDING}>Landing</Link>
-    </li>
-    <li>
+    </Menu.Item>
+    <Menu.Item>
       <Link to={ROUTES.SIGN_IN}>Sign In</Link>
-    </li>
-  </ul>
+    </Menu.Item>
+  </Menu>
 );
 
 export default Navigation;
