@@ -89,11 +89,7 @@ class DesktopContainer extends Component {
             textAlign="center"
             style={{ minHeight: 700, padding: "1em 0em" }}
             vertical
-<<<<<<< HEAD
             color="black" // top first hero segment background color
-=======
-            color="orange"
->>>>>>> 7a730799ca1c2ff52424cad15abb6cf0be3ba6a3
           >
             <Menu
               fixed={fixed ? "top" : null}
@@ -232,16 +228,10 @@ ResponsiveContainer.propTypes = {
 const HomepageLayout = () => (
   <ResponsiveContainer>
     <Segment style={{ padding: "8em 0em" }} vertical>
-<<<<<<< HEAD
       <Header as="h3" textAlign="center" style={{ fontSize: "2em" }}>
         Why Eatira ?
       </Header>
       <br />
-=======
-      <Header as="h1" textAlign="center">
-        asdhkj
-      </Header>
->>>>>>> 7a730799ca1c2ff52424cad15abb6cf0be3ba6a3
       <Grid container stackable verticalAlign="middle">
         <Grid.Row>
           <Grid.Column width={5}>
