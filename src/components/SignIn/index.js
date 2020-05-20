@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import { compose } from "recompose";
 import { SignUpLink } from "../SignUp";
 import { PasswordForgetLink } from "../PasswordForget";
@@ -18,7 +18,7 @@ import {
 const SignInPage = () => (
   <div
     style={{
-      backgroundImage: `url(https://i.imgur.com/NFSmh5Y.jpg)`,
+      backgroundImage: `url(https://i.imgur.com/PKQgE81.jpg?1)`,
       backgroundSize: "cover",
     }}
   >
@@ -71,9 +71,13 @@ class SignInFormBase extends Component {
         verticalAlign="middle"
       >
         <Grid.Column style={{ maxWidth: 450 }}>
-          <Header as="h1" color="teal" textAlign="center">
-            <Image src="https://i.imgur.com/48NIKsN.jpg" />
-          </Header>
+          <div>
+            <Link to={ROUTES.LANDING}>
+              <Header as="h1" color="teal" textAlign="center">
+                <Image src="https://i.imgur.com/48NIKsN.jpg" />
+              </Header>
+            </Link>
+          </div>
           <Form size="large" onSubmit={this.onSubmit}>
             <Segment stacked>
               <Form.Input

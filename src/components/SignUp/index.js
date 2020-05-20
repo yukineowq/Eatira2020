@@ -3,20 +3,12 @@ import { Link, withRouter } from "react-router-dom";
 import { withFirebase } from "../Firebase";
 import * as ROUTES from "../../constants/routes";
 import { compose } from "recompose";
-import {
-  Button,
-  Form,
-  Grid,
-  Header,
-  Image,
-  Message,
-  Segment,
-} from "semantic-ui-react";
+import { Button, Form, Grid, Header, Image, Segment } from "semantic-ui-react";
 
 const SignUpPage = () => (
   <div
     style={{
-      backgroundImage: `url(https://i.imgur.com/NFSmh5Y.jpg)`,
+      backgroundImage: `url(https://i.imgur.com/PKQgE81.jpg?1)`,
       backgroundSize: "cover",
     }}
   >
@@ -81,9 +73,13 @@ class SignUpFormBase extends Component {
         verticalAlign="middle"
       >
         <Grid.Column style={{ maxWidth: 450 }}>
-          <Header as="h1" color="teal" textAlign="center">
-            <Image src="https://i.imgur.com/48NIKsN.jpg" />
-          </Header>
+          <div>
+            <Link to={ROUTES.LANDING}>
+              <Header as="h1" color="teal" textAlign="center">
+                <Image src="https://i.imgur.com/48NIKsN.jpg" />
+              </Header>
+            </Link>
+          </div>
           <Form size="large" onSubmit={this.onSubmit}>
             <Segment stacked>
               <Form.Input
@@ -134,7 +130,7 @@ class SignUpFormBase extends Component {
                 disabled={isInvalid}
                 type="submit"
               >
-                Login
+                Sign Up
               </Button>
               {error && <p>{error.message}</p>}
             </Segment>

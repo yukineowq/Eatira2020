@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import {
   Button,
   Container,
-  Divider,
   Grid,
   Header,
   Icon,
@@ -15,6 +14,8 @@ import {
   Sidebar,
   Visibility,
 } from "semantic-ui-react";
+import { Link } from "react-router-dom";
+import * as ROUTES from "../../constants/routes";
 
 // Heads up!
 // We using React Static to prerender our docs with server side rendering, this is a quite simple solution.
@@ -52,10 +53,14 @@ const HomepageHeading = ({ mobile }) => (
         marginTop: mobile ? "0.5em" : "1.5em",
       }}
     />
-    <Button secondary size="huge">
-      Get Started
-      <Icon name="right arrow" />
-    </Button>
+    <div>
+      <Link to={ROUTES.SIGN_UP}>
+        <Button secondary size="huge">
+          Get Started
+          <Icon name="right arrow" />
+        </Button>
+      </Link>
+    </div>
   </Container>
 );
 
@@ -109,18 +114,26 @@ class DesktopContainer extends Component {
                 <Menu.Item as="a">About</Menu.Item>
                 <Menu.Item as="a">Eatira Deals</Menu.Item>
                 <Menu.Item position="right">
-                  <Button as="a" inverted={!fixed}>
-                    Log In
-                  </Button>
-                  <Button
-                    as="a"
-                    inverted={!fixed}
-                    //primary={fixed}
-                    color="red"
-                    style={{ marginLeft: "0.5em" }}
-                  >
-                    Sign Up
-                  </Button>
+                  <div>
+                    <Link to={ROUTES.SIGN_IN}>
+                      <Button as="a" inverted={!fixed}>
+                        Log In
+                      </Button>
+                    </Link>
+                  </div>
+                  <div>
+                    <Link to={ROUTES.SIGN_UP}>
+                      <Button
+                        as="a"
+                        inverted={!fixed}
+                        //primary={fixed}
+                        color="red"
+                        style={{ marginLeft: "0.5em" }}
+                      >
+                        Sign Up
+                      </Button>
+                    </Link>
+                  </div>
                 </Menu.Item>
               </Container>
             </Menu>

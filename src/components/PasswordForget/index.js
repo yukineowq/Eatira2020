@@ -8,7 +8,7 @@ import { Button, Form, Grid, Header, Image, Segment } from "semantic-ui-react";
 const PasswordForgetPage = () => (
   <div
     style={{
-      backgroundImage: `url(https://i.imgur.com/NFSmh5Y.jpg)`,
+      backgroundImage: `url(https://i.imgur.com/PKQgE81.jpg?1)`,
       backgroundSize: "cover",
     }}
   >
@@ -59,9 +59,13 @@ class PasswordForgetFormBase extends Component {
         verticalAlign="middle"
       >
         <Grid.Column style={{ maxWidth: 450 }}>
-          <Header as="h1" color="teal" textAlign="center">
-            <Image src="https://i.imgur.com/48NIKsN.jpg" />
-          </Header>
+          <div>
+            <Link to={ROUTES.LANDING}>
+              <Header as="h1" color="teal" textAlign="center">
+                <Image src="https://i.imgur.com/48NIKsN.jpg" />
+              </Header>
+            </Link>
+          </div>
           <Form size="large" onSubmit={this.onSubmit}>
             <Segment stacked>
               <Form.Input

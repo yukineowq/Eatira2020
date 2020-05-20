@@ -1,11 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
 import { Menu } from "semantic-ui-react";
-import { Link } from "react-router-dom";
-
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import SignOutButton from "../SignOut";
 import * as ROUTES from "../../constants/routes";
-
 import { AuthUserContext } from "../Session";
+import SignUpPage from "../SignUp";
+import LandingPage from "../Landing";
+import SignInPage from "../SignIn";
+import PasswordForgetPage from "../PasswordForget";
 
 const Navigation = () => (
   <div>
@@ -39,14 +41,12 @@ const NavigationAuth = () => (
 );
 
 const NavigationNonAuth = () => (
-  <Menu>
-    <Menu.Item>
-      <Link to={ROUTES.LANDING}>Landing</Link>
-    </Menu.Item>
-    <Menu.Item>
-      <Link to={ROUTES.SIGN_IN}>Sign In</Link>
-    </Menu.Item>
-  </Menu>
+  <Router>
+    <div>
+      <Link to={ROUTES.LANDING} />
+      <Link to={ROUTES.SIGN_IN} />
+    </div>
+  </Router>
 );
 
 export default Navigation;
