@@ -122,6 +122,7 @@ class DesktopContainer extends Component {
                   />
                 </Link>
                 <br />
+
                 <Menu.Item as="a">Features</Menu.Item>
                 <Menu.Item as="a">About</Menu.Item>
                 <Menu.Item as="a">Eatira Deals</Menu.Item>
@@ -221,8 +222,8 @@ class MobileContainer extends Component {
           >
             <Container>
               <Menu inverted pointing secondary size="large">
-                <Menu.Item onClick={this.handleToggle} color="black">
-                  <Icon name="sidebar" />
+                <Menu.Item onClick={this.handleToggle}>
+                  <Icon name="sidebar" color="black" />
                 </Menu.Item>
                 <Menu.Item position="right">
                   <Link to={ROUTES.SIGN_IN}>
