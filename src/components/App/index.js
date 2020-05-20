@@ -11,6 +11,8 @@ import AdminPage from "../Admin";
 import ProfilePage from "../Profile";
 import PlanPage from "../Plan";
 import SavedPostsPage from "../SavedPosts";
+import AboutPage from "../About";
+import FeaturesPage from "../Features";
 import * as ROUTES from "../../constants/routes";
 import { withAuthentication } from "../Session";
 import "semantic-ui-css/semantic.min.css";
@@ -30,6 +32,8 @@ const App = () => (
       <Route path={ROUTES.PROFILE} component={ProfilePage} />
       <Route path={ROUTES.PLAN} component={PlanPage} />
       <Route path={ROUTES.SAVED_POSTS} component={SavedPostsPage} />
+      <Route path={ROUTES.ABOUT} component={AboutPage} />
+      <Route path={ROUTES.FEATURES} component={FeaturesPage} />
     </div>
   </Router>
 );

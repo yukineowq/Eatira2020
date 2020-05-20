@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import React, { Component } from "react";
 import {
   Button,
+  Card,
   Container,
   Grid,
   Header,
@@ -26,43 +27,28 @@ const getWidth = () => {
   return isSSR ? Responsive.onlyTablet.minWidth : window.innerWidth;
 };
 
-/* eslint-disable react/no-multi-comp */
-/* Heads up! HomepageHeading uses inline styling, however it's not the best practice. Use CSS or styled components for
- * such things.
- */
 const HomepageHeading = ({ mobile }) => (
-  <Container text>
-    <Header
-      as="h1"
-      content="eat() at where you love"
-      inverted
-      style={{
-        fontSize: mobile ? "2em" : "4em",
-        fontWeight: "normal",
-        marginBottom: 1,
-        marginTop: mobile ? "1.5em" : "3em",
-        color: "black",
-      }}
-    />
-    <Header
-      as="h1"
-      content="Share your food passion."
-      inverted
-      style={{
-        fontSize: mobile ? "1.0em" : "1.3em",
-        fontWeight: "normal",
-        marginTop: mobile ? "0.5em" : "1.0em",
-        color: "black",
-      }}
-    />
-    <div>
-      <Link to={ROUTES.SIGN_UP}>
-        <Button secondary size="big">
-          Get Started
-          <Icon name="right arrow" />
-        </Button>
-      </Link>
-    </div>
+  <Container text style={{ marginTop: "3em" }}>
+    <Card centered>
+      <Card.Content>
+        <Card.Header>
+          Hello! We are Eatira <br />
+          <Icon name="smile outline" />
+        </Card.Header>
+        <Card.Meta>
+          <span className="date">Joined in 2020</span>
+        </Card.Meta>
+        <Card.Description>
+          <h3> We love food & food connects people.</h3>
+          Our goal is to help our users find the <strong>best</strong> food
+          social media application that can <strong>automate</strong> all these
+          painful processes of selecting a restaurant & decide on the{" "}
+          <strong>best</strong> menu to fit your requests.
+          <h4>Founders, Reuben & Yuki</h4>
+        </Card.Description>
+      </Card.Content>
+    </Card>
+    <br />
   </Container>
 );
 
@@ -70,10 +56,6 @@ HomepageHeading.propTypes = {
   mobile: PropTypes.bool,
 };
 
-/* Heads up!
- * Neither Semantic UI nor Semantic UI React offer a responsive navbar, however, it can be implemented easily.
- * It can be more complicated, but you can create really flexible markup.
- */
 class DesktopContainer extends Component {
   state = {};
 
@@ -96,7 +78,7 @@ class DesktopContainer extends Component {
             textAlign="center"
             style={{
               minHeight: 700,
-              padding: "1em 0em",
+              padding: "0.2em 0em",
               backgroundImage: `url(https://i.imgur.com/QhaTVVJ.jpg)`,
               backgroundSize: "cover",
               backgroundPosition: "centre",
@@ -121,12 +103,12 @@ class DesktopContainer extends Component {
                     circular
                   />
                 </Link>
+                <br />
+
                 <Link to={ROUTES.FEATURES}>
                   <Menu.Item as="a">Features</Menu.Item>
                 </Link>
-                <Link to={ROUTES.ABOUT}>
-                  <Menu.Item as="a">About</Menu.Item>
-                </Link>
+                <Menu.Item as="a">About</Menu.Item>
                 <Menu.Item position="right">
                   <div>
                     <Link to={ROUTES.SIGN_IN}>
@@ -191,16 +173,12 @@ class MobileContainer extends Component {
           visible={sidebarOpened}
         >
           <br />
-          <Link to={ROUTES.LANDING}>
-            <Image src="https://i.imgur.com/q3ekeqj.jpg" size="tiny" circular />
-          </Link>
+          <Image src="https://i.imgur.com/q3ekeqj.jpg" size="tiny" circular />
           <br />
-          <Link to={ROUTES.ABOUT}>
+          <Link to={ROUTES.FEATURES}>
             <Menu.Item as="a">Features</Menu.Item>
           </Link>
-          <Link to={ROUTES.ABOUT}>
-            <Menu.Item as="a">About</Menu.Item>
-          </Link>
+          <Menu.Item as="a">About</Menu.Item>
           <Menu.Item as="a">Eatira Deals</Menu.Item>
           <Link to={ROUTES.SIGN_IN}>
             <Menu.Item as="a">Log In</Menu.Item>
@@ -276,59 +254,8 @@ ResponsiveContainer.propTypes = {
   children: PropTypes.node,
 };
 
-const HomepageLayout = () => (
+const About = () => (
   <ResponsiveContainer>
-    <Segment style={{ padding: "8em 0em" }} vertical>
-      <Header as="h3" textAlign="center" style={{ fontSize: "2em" }}>
-        Why Eatira ?
-      </Header>
-      <br />
-      <Grid container stackable verticalAlign="middle">
-        <Grid.Row>
-          <Grid.Column width={5}>
-            <Image
-              src="https://image.flaticon.com/icons/svg/2082/2082045.svg"
-              size="small"
-              centered
-            />
-            <Header as="h3" textAlign="center" style={{ fontSize: "2em" }}>
-              Plan A Meal
-            </Header>
-            <Header as="h5" textAlign="center" style={{ fontSize: "1.33em" }}>
-              The most delicious and fastest decision to decide your daily meal
-            </Header>
-          </Grid.Column>
-          <Grid.Column width={5}>
-            <Image
-              src="https://image.flaticon.com/icons/svg/523/523229.svg"
-              size="small"
-              centered
-            />
-            <Header as="h3" textAlign="center" style={{ fontSize: "2em" }}>
-              Always Free
-            </Header>
-            <Header as="h5" textAlign="center" style={{ fontSize: "1.33em" }}>
-              Of course it's completely free for you, and non-hassle.
-            </Header>
-          </Grid.Column>
-          <Grid.Column floated="right" width={6}>
-            <Image
-              src="https://image.flaticon.com/icons/png/512/2933/2933317.png"
-              size="small"
-              centered
-            />
-            <Header as="h3" textAlign="center" style={{ fontSize: "2em" }}>
-              Sharing Online
-            </Header>
-            <Header as="h5" textAlign="center" style={{ fontSize: "1.33em" }}>
-              What will we eat next? See your friends, family & colleagues' meal
-              posts!
-            </Header>
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
-    </Segment>
-
     <Segment inverted vertical style={{ padding: "5em 0em" }}>
       <Container textAlign="center">
         <Grid divided inverted stackable>
@@ -336,10 +263,7 @@ const HomepageLayout = () => (
             <Grid.Column width={5}>
               <Header textAlign="center" inverted as="h3" content="Company" />
               <List link inverted>
-                <Link to={ROUTES.ABOUT}>
-                  <List.Item as="a">About Us</List.Item>
-                </Link>{" "}
-                <br />
+                <List.Item as="a">About Us</List.Item>
               </List>
             </Grid.Column>
             <Grid.Column width={5}>
@@ -370,4 +294,4 @@ const HomepageLayout = () => (
   </ResponsiveContainer>
 );
 
-export default HomepageLayout;
+export default About;

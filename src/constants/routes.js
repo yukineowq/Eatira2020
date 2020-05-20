@@ -8,3 +8,5 @@ export const PASSWORD_FORGET = "/pw-forget";
 export const PLAN = "/plan";
 export const PROFILE = "/profile";
 export const SAVED_POSTS = "/saved-posts";
+export const ABOUT = "/aboutus";
+export const FEATURES = "/features";
