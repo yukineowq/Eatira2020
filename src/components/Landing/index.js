@@ -41,6 +41,7 @@ const HomepageHeading = ({ mobile }) => (
         fontWeight: "normal",
         marginBottom: 1,
         marginTop: mobile ? "1.5em" : "3em",
+        color: "black",
       }}
     />
     <Header
@@ -92,7 +93,12 @@ class DesktopContainer extends Component {
           <Segment
             inverted
             textAlign="center"
-            style={{ minHeight: 700, padding: "1em 0em" }}
+            style={{
+              minHeight: 700,
+              padding: "1em 0em",
+              backgroundImage: `url(https://i.imgur.com/QhaTVVJ.jpg)`,
+              backgroundSize: "cover",
+            }}
             vertical
             color="black" // top first hero segment background color
           >

@@ -66,6 +66,7 @@ class PasswordForgetFormBase extends Component {
               </Header>
             </Link>
           </div>
+          <br />
           <Form size="large" onSubmit={this.onSubmit}>
             <Segment stacked>
               <Form.Input
