@@ -8,8 +8,13 @@ import { Button, Form, Grid, Header, Image, Segment } from "semantic-ui-react";
 const SignUpPage = () => (
   <div
     style={{
+      minHeight: 700,
+      padding: "0.2em 0em",
       backgroundImage: `url(https://i.imgur.com/PKQgE81.jpg?1)`,
       backgroundSize: "cover",
+      backgroundPosition: "centre",
+      height: "100%",
+      width: "100",
     }}
   >
     <SignUpForm />

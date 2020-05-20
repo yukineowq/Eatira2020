@@ -45,13 +45,14 @@ const HomepageHeading = ({ mobile }) => (
       }}
     />
     <Header
-      as="h3"
-      content="Singapore's top food social media application to share your food passion."
+      as="h1"
+      content="Share your food passion."
       inverted
       style={{
         fontSize: mobile ? "1.0em" : "1.3em",
         fontWeight: "normal",
-        marginTop: mobile ? "0.5em" : "1.5em",
+        marginTop: mobile ? "0.5em" : "1.0em",
+        color: "black",
       }}
     />
     <div>
@@ -95,17 +96,20 @@ class DesktopContainer extends Component {
             textAlign="center"
             style={{
               minHeight: 700,
-              padding: "1em 0em",
+              padding: "0.2em 0em",
               backgroundImage: `url(https://i.imgur.com/QhaTVVJ.jpg)`,
               backgroundSize: "cover",
+              backgroundPosition: "centre",
+              // backgroundRepeat: "no-repeat",
+              height: "100%",
+              width: "100",
             }}
             vertical
-            color="black" // top first hero segment background color
           >
             <Menu
               fixed={fixed ? "top" : null}
-              inverted={!fixed}
-              pointing={!fixed}
+              inverted={fixed}
+              pointing={fixed}
               secondary={!fixed}
               size="large"
             >
@@ -122,7 +126,7 @@ class DesktopContainer extends Component {
                 <Menu.Item position="right">
                   <div>
                     <Link to={ROUTES.SIGN_IN}>
-                      <Button as="a" inverted={!fixed}>
+                      <Button as="a" inverted={!fixed} color="facebook">
                         Log In
                       </Button>
                     </Link>
@@ -188,34 +192,52 @@ class MobileContainer extends Component {
           <Menu.Item as="a">Features</Menu.Item>
           <Menu.Item as="a">About</Menu.Item>
           <Menu.Item as="a">Eatira Deals</Menu.Item>
-          <Menu.Item as="a">Log In</Menu.Item>
-          <Menu.Item as="a">Sign Up</Menu.Item>
+          <Link to={ROUTES.SIGN_IN}>
+            <Menu.Item as="a">Log In</Menu.Item>
+          </Link>
+          <Link to={ROUTES.SIGN_UP}>
+            <Menu.Item as="a">Sign Up</Menu.Item>
+          </Link>
         </Sidebar>
 
         <Sidebar.Pusher dimmed={sidebarOpened}>
           <Segment
             inverted
             textAlign="center"
-            style={{ minHeight: 350, padding: "1em 0em" }}
+            style={{
+              minHeight: "100%",
+              padding: "0em 0em",
+              backgroundImage: `url(https://i.imgur.com/sHwcQjg.jpg?2)`,
+              backgroundSize: "cover",
+              flex: 1,
+              backgroundPosition: "centre",
+              backgroundRepeat: "no-repeat",
+              height: "70vh",
+              width: "100vw",
+            }}
             vertical
           >
             <Container>
               <Menu inverted pointing secondary size="large">
-                <Menu.Item onClick={this.handleToggle}>
+                <Menu.Item onClick={this.handleToggle} color="black">
                   <Icon name="sidebar" />
                 </Menu.Item>
                 <Menu.Item position="right">
-                  <Button as="a" inverted>
-                    Log in
-                  </Button>
-                  <Button
-                    as="a"
-                    inverted
-                    style={{ marginLeft: "0.5em" }}
-                    color="red"
-                  >
-                    Sign Up
-                  </Button>
+                  <Link to={ROUTES.SIGN_IN}>
+                    <Button as="a" inverted color="facebook">
+                      Log In
+                    </Button>
+                  </Link>
+                  <Link to={ROUTES.SIGN_UP}>
+                    <Button
+                      as="a"
+                      inverted
+                      style={{ marginLeft: "0.5em" }}
+                      color="red"
+                    >
+                      Sign Up
+                    </Button>
+                  </Link>
                 </Menu.Item>
               </Menu>
             </Container>
