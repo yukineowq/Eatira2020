@@ -114,11 +114,13 @@ class DesktopContainer extends Component {
               size="large"
             >
               <Container>
-                <Image
-                  src="https://i.imgur.com/q3ekeqj.jpg"
-                  size="tiny"
-                  circular
-                />
+                <Link to={ROUTES.LANDING}>
+                  <Image
+                    src="https://i.imgur.com/q3ekeqj.jpg"
+                    size="tiny"
+                    circular
+                  />
+                </Link>
                 <br />
                 <Menu.Item as="a">Features</Menu.Item>
                 <Menu.Item as="a">About</Menu.Item>
