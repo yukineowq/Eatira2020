@@ -288,11 +288,6 @@ const HomepageLayout = () => (
             </Header>
           </Grid.Column>
         </Grid.Row>
-        <Grid.Row>
-          <Grid.Column textAlign="center">
-            <Button size="huge">Learn More</Button>
-          </Grid.Column>
-        </Grid.Row>
       </Grid>
     </Segment>
 
