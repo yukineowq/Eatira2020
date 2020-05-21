@@ -195,13 +195,12 @@ class MobileContainer extends Component {
             <Image src="https://i.imgur.com/q3ekeqj.jpg" size="tiny" circular />
           </Link>
           <br />
-          <Link to={ROUTES.ABOUT}>
+          <Link to={ROUTES.FEATURES}>
             <Menu.Item as="a">Features</Menu.Item>
           </Link>
           <Link to={ROUTES.ABOUT}>
             <Menu.Item as="a">About</Menu.Item>
           </Link>
-          <Menu.Item as="a">Eatira Deals</Menu.Item>
           <Link to={ROUTES.SIGN_IN}>
             <Menu.Item as="a">Log In</Menu.Item>
           </Link>
@@ -329,7 +328,7 @@ const HomepageLayout = () => (
       </Grid>
     </Segment>
 
-    <Segment inverted vertical style={{ padding: "5em 0em" }}>
+    <Segment inverted vertical style={{ padding: "3em 0em" }}>
       <Container textAlign="center">
         <Grid divided inverted stackable>
           <Grid.Row>
@@ -346,7 +345,9 @@ const HomepageLayout = () => (
               <Header textAlign="center" inverted as="h3" content="Help" />
               <List link inverted>
                 <List.Item as="a">FAQ</List.Item>
-                <List.Item as="a">Contact Us</List.Item>
+                <Link to={ROUTES.CONTACTUS}>
+                  <List.Item as="a">Contact Us</List.Item>
+                </Link>
               </List>
             </Grid.Column>
             <Grid.Column floated="right" width={6}>

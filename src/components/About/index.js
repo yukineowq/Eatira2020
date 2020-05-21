@@ -27,35 +27,6 @@ const getWidth = () => {
   return isSSR ? Responsive.onlyTablet.minWidth : window.innerWidth;
 };
 
-const HomepageHeading = ({ mobile }) => (
-  <Container text style={{ marginTop: "3em" }}>
-    <Card centered>
-      <Card.Content>
-        <Card.Header>
-          Hello! We are Eatira <br />
-          <Icon name="smile outline" />
-        </Card.Header>
-        <Card.Meta>
-          <span className="date">Joined in 2020</span>
-        </Card.Meta>
-        <Card.Description>
-          <h3> We love food & food connects people.</h3>
-          Our goal is to help our users find the <strong>best</strong> food
-          social media application that can <strong>automate</strong> all these
-          painful processes of selecting a restaurant & decide on the{" "}
-          <strong>best</strong> menu to fit your requests.
-          <h4>Founders, Reuben & Yuki</h4>
-        </Card.Description>
-      </Card.Content>
-    </Card>
-    <br />
-  </Container>
-);
-
-HomepageHeading.propTypes = {
-  mobile: PropTypes.bool,
-};
-
 class DesktopContainer extends Component {
   state = {};
 
@@ -73,68 +44,50 @@ class DesktopContainer extends Component {
           onBottomPassed={this.showFixedMenu}
           onBottomPassedReverse={this.hideFixedMenu}
         >
-          <Segment
-            inverted
-            textAlign="center"
-            style={{
-              minHeight: 700,
-              padding: "0.2em 0em",
-              backgroundImage: `url(https://i.imgur.com/QhaTVVJ.jpg)`,
-              backgroundSize: "cover",
-              backgroundPosition: "centre",
-              // backgroundRepeat: "no-repeat",
-              height: "100%",
-              width: "100",
-            }}
-            vertical
+          <Menu
+            inverted={fixed}
+            pointing={fixed}
+            secondary={!fixed}
+            size="large"
           >
-            <Menu
-              fixed={fixed ? "top" : null}
-              inverted={fixed}
-              pointing={fixed}
-              secondary={!fixed}
-              size="large"
-            >
-              <Container>
-                <Link to={ROUTES.LANDING}>
-                  <Image
-                    src="https://i.imgur.com/q3ekeqj.jpg"
-                    size="tiny"
-                    circular
-                  />
-                </Link>
-                <br />
+            <Container>
+              <Link to={ROUTES.LANDING}>
+                <Image
+                  src="https://i.imgur.com/q3ekeqj.jpg"
+                  size="tiny"
+                  circular
+                />
+              </Link>
+              <br />
 
-                <Link to={ROUTES.FEATURES}>
-                  <Menu.Item as="a">Features</Menu.Item>
-                </Link>
-                <Menu.Item as="a">About</Menu.Item>
-                <Menu.Item position="right">
-                  <div>
-                    <Link to={ROUTES.SIGN_IN}>
-                      <Button as="a" inverted={!fixed} color="facebook">
-                        Log In
-                      </Button>
-                    </Link>
-                  </div>
-                  <div>
-                    <Link to={ROUTES.SIGN_UP}>
-                      <Button
-                        as="a"
-                        inverted={!fixed}
-                        //primary={fixed}
-                        color="red"
-                        style={{ marginLeft: "0.5em" }}
-                      >
-                        Sign Up
-                      </Button>
-                    </Link>
-                  </div>
-                </Menu.Item>
-              </Container>
-            </Menu>
-            <HomepageHeading />
-          </Segment>
+              <Link to={ROUTES.FEATURES}>
+                <Menu.Item as="a">Features</Menu.Item>
+              </Link>
+              <Menu.Item as="a">About</Menu.Item>
+              <Menu.Item position="right">
+                <div>
+                  <Link to={ROUTES.SIGN_IN}>
+                    <Button as="a" inverted={!fixed} color="facebook">
+                      Log In
+                    </Button>
+                  </Link>
+                </div>
+                <div>
+                  <Link to={ROUTES.SIGN_UP}>
+                    <Button
+                      as="a"
+                      inverted={!fixed}
+                      //primary={fixed}
+                      color="red"
+                      style={{ marginLeft: "0.5em" }}
+                    >
+                      Sign Up
+                    </Button>
+                  </Link>
+                </div>
+              </Menu.Item>
+            </Container>
+          </Menu>
         </Visibility>
 
         {children}
@@ -173,13 +126,14 @@ class MobileContainer extends Component {
           visible={sidebarOpened}
         >
           <br />
-          <Image src="https://i.imgur.com/q3ekeqj.jpg" size="tiny" circular />
+          <Link to={ROUTES.LANDING}>
+            <Image src="https://i.imgur.com/q3ekeqj.jpg" size="tiny" circular />
+          </Link>
           <br />
           <Link to={ROUTES.FEATURES}>
             <Menu.Item as="a">Features</Menu.Item>
           </Link>
           <Menu.Item as="a">About</Menu.Item>
-          <Menu.Item as="a">Eatira Deals</Menu.Item>
           <Link to={ROUTES.SIGN_IN}>
             <Menu.Item as="a">Log In</Menu.Item>
           </Link>
@@ -189,49 +143,28 @@ class MobileContainer extends Component {
         </Sidebar>
 
         <Sidebar.Pusher dimmed={sidebarOpened}>
-          <Segment
-            inverted
-            textAlign="center"
-            style={{
-              minHeight: "100%",
-              padding: "0em 0em",
-              backgroundImage: `url(https://i.imgur.com/sHwcQjg.jpg?2)`,
-              backgroundSize: "cover",
-              flex: 1,
-              backgroundPosition: "centre",
-              backgroundRepeat: "no-repeat",
-              height: "70vh",
-              width: "100vw",
-            }}
-            vertical
-          >
-            <Container>
-              <Menu inverted pointing secondary size="large">
-                <Menu.Item onClick={this.handleToggle}>
-                  <Icon name="sidebar" color="black" />
-                </Menu.Item>
-                <Menu.Item position="right">
-                  <Link to={ROUTES.SIGN_IN}>
-                    <Button as="a" inverted color="facebook">
-                      Log In
-                    </Button>
-                  </Link>
-                  <Link to={ROUTES.SIGN_UP}>
-                    <Button
-                      as="a"
-                      inverted
-                      style={{ marginLeft: "0.5em" }}
-                      color="red"
-                    >
-                      Sign Up
-                    </Button>
-                  </Link>
-                </Menu.Item>
-              </Menu>
-            </Container>
-            <HomepageHeading mobile />
-          </Segment>
-
+          <Menu inverted pointing secondary size="large">
+            <Menu.Item onClick={this.handleToggle}>
+              <Icon name="sidebar" color="black" />
+            </Menu.Item>
+            <Menu.Item position="right">
+              <Link to={ROUTES.SIGN_IN}>
+                <Button as="a" inverted color="facebook">
+                  Log In
+                </Button>
+              </Link>
+              <Link to={ROUTES.SIGN_UP}>
+                <Button
+                  as="a"
+                  inverted
+                  style={{ marginLeft: "0.5em" }}
+                  color="red"
+                >
+                  Sign Up
+                </Button>
+              </Link>
+            </Menu.Item>
+          </Menu>
           {children}
         </Sidebar.Pusher>
       </Responsive>
@@ -256,7 +189,44 @@ ResponsiveContainer.propTypes = {
 
 const About = () => (
   <ResponsiveContainer>
-    <Segment inverted vertical style={{ padding: "5em 0em" }}>
+    <Segment
+      inverted
+      textAlign="center"
+      style={{
+        minHeight: "100%",
+        padding: "0em 0em",
+        backgroundImage: `url(https://i.imgur.com/QhaTVVJ.jpg?1)`,
+        backgroundSize: "cover",
+        flex: 1,
+        backgroundPosition: "centre",
+        backgroundRepeat: "no-repeat",
+        height: "70vh",
+        width: "100vw",
+      }}
+      vertical
+    >
+      <Card centered>
+        <Card.Content>
+          <Card.Header>
+            Hello! We are Eatira <br />
+            <Icon name="smile outline" />
+          </Card.Header>
+          <Card.Meta>
+            <span className="date">Joined in 2020</span>
+          </Card.Meta>
+          <Card.Description>
+            <h3> We love food & food connects people.</h3>
+            Our goal is to help our users find the <strong>best</strong> food
+            social media application that can <strong>automate</strong> all
+            these painful processes of selecting a restaurant & decide on the{" "}
+            <strong>best</strong> menu to fit your requests.
+            <h4>Founders, Reuben & Yuki</h4>
+          </Card.Description>
+        </Card.Content>
+      </Card>
+      <br />
+    </Segment>
+    <Segment inverted vertical style={{ padding: "3em 0em" }}>
       <Container textAlign="center">
         <Grid divided inverted stackable>
           <Grid.Row>
@@ -270,7 +240,9 @@ const About = () => (
               <Header textAlign="center" inverted as="h3" content="Help" />
               <List link inverted>
                 <List.Item as="a">FAQ</List.Item>
-                <List.Item as="a">Contact Us</List.Item>
+                <Link to={ROUTES.CONTACTUS}>
+                  <List.Item as="a">Contact Us</List.Item>
+                </Link>
               </List>
             </Grid.Column>
             <Grid.Column floated="right" width={6}>

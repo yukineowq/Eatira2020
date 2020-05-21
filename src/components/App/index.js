@@ -13,6 +13,8 @@ import PlanPage from "../Plan";
 import SavedPostsPage from "../SavedPosts";
 import AboutPage from "../About";
 import FeaturesPage from "../Features";
+import ContactUsPage from "../ContactUs";
+import FAQPage from "../FAQ";
 import * as ROUTES from "../../constants/routes";
 import { withAuthentication } from "../Session";
 import "semantic-ui-css/semantic.min.css";
@@ -34,6 +36,8 @@ const App = () => (
       <Route path={ROUTES.SAVED_POSTS} component={SavedPostsPage} />
       <Route path={ROUTES.ABOUT} component={AboutPage} />
       <Route path={ROUTES.FEATURES} component={FeaturesPage} />
+      <Route path={ROUTES.CONTACTUS} component={ContactUsPage} />
+      <Route path={ROUTES.FAQ} component={FAQPage} />
     </div>
   </Router>
 );

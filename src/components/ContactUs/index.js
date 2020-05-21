@@ -3,15 +3,19 @@ import React, { Component } from "react";
 import {
   Button,
   Container,
+  Form,
   Grid,
   Header,
   Icon,
   Image,
+  Input,
   List,
   Menu,
   Responsive,
+  Select,
   Segment,
   Sidebar,
+  TextArea,
   Visibility,
 } from "semantic-ui-react";
 import { Link } from "react-router-dom";
@@ -59,7 +63,9 @@ class DesktopContainer extends Component {
               </Link>
               <br />
 
-              <Menu.Item as="a">Features</Menu.Item>
+              <Link to={ROUTES.FEATURES}>
+                <Menu.Item as="a">Features</Menu.Item>
+              </Link>
               <Link to={ROUTES.ABOUT}>
                 <Menu.Item as="a">About</Menu.Item>
               </Link>
@@ -129,7 +135,9 @@ class MobileContainer extends Component {
             <Image src="https://i.imgur.com/q3ekeqj.jpg" size="tiny" circular />
           </Link>
           <br />
-          <Menu.Item as="a">Features</Menu.Item>
+          <Link to={ROUTES.FEATURES}>
+            <Menu.Item as="a">Features</Menu.Item>
+          </Link>
           <Link to={ROUTES.ABOUT}>
             <Menu.Item as="a">About</Menu.Item>
           </Link>
@@ -142,31 +150,28 @@ class MobileContainer extends Component {
         </Sidebar>
 
         <Sidebar.Pusher dimmed={sidebarOpened}>
-          <Container>
-            <Menu inverted pointing secondary size="large">
-              <Menu.Item onClick={this.handleToggle}>
-                <Icon name="sidebar" color="black" />
-              </Menu.Item>
-              <Menu.Item position="right">
-                <Link to={ROUTES.SIGN_IN}>
-                  <Button as="a" inverted color="facebook">
-                    Log In
-                  </Button>
-                </Link>
-                <Link to={ROUTES.SIGN_UP}>
-                  <Button
-                    as="a"
-                    inverted
-                    style={{ marginLeft: "0.5em" }}
-                    color="red"
-                  >
-                    Sign Up
-                  </Button>
-                </Link>
-              </Menu.Item>
-            </Menu>
-          </Container>
-
+          <Menu inverted pointing secondary size="large">
+            <Menu.Item onClick={this.handleToggle}>
+              <Icon name="sidebar" color="black" />
+            </Menu.Item>
+            <Menu.Item position="right">
+              <Link to={ROUTES.SIGN_IN}>
+                <Button as="a" inverted color="facebook">
+                  Log In
+                </Button>
+              </Link>
+              <Link to={ROUTES.SIGN_UP}>
+                <Button
+                  as="a"
+                  inverted
+                  style={{ marginLeft: "0.5em" }}
+                  color="red"
+                >
+                  Sign Up
+                </Button>
+              </Link>
+            </Menu.Item>
+          </Menu>
           {children}
         </Sidebar.Pusher>
       </Responsive>
@@ -189,56 +194,68 @@ ResponsiveContainer.propTypes = {
   children: PropTypes.node,
 };
 
-const Features = () => (
+const ContactUs = () => (
   <ResponsiveContainer>
-    <Segment style={{ padding: "8em 0em" }} vertical>
-      <Header as="h3" textAlign="center" style={{ fontSize: "2em" }}>
-        Plan A Meal
-      </Header>
-      <br />
-      <Grid container stackable verticalAlign="middle">
-        <Grid.Row>
-          <Grid.Column width={5}>
-            <Image
-              src="https://image.flaticon.com/icons/svg/1889/1889952.svg"
-              size="small"
-              centered
-            />
-            <Header as="h3" textAlign="center" style={{ fontSize: "2em" }}>
-              Location
-            </Header>
-            <Header as="h5" textAlign="center" style={{ fontSize: "1.33em" }}>
-              Auto-generated location through Google Map API.
-            </Header>
-          </Grid.Column>
-          <Grid.Column width={5}>
-            <Image
-              src="https://image.flaticon.com/icons/svg/2942/2942827.svg"
-              size="small"
-              centered
-            />
-            <Header as="h3" textAlign="center" style={{ fontSize: "2em" }}>
-              Date & Time
-            </Header>
-            <Header as="h5" textAlign="center" style={{ fontSize: "1.33em" }}>
-              Schedule a date and time to meet for a meal.
-            </Header>
-          </Grid.Column>
-          <Grid.Column floated="right" width={6}>
-            <Image
-              src="https://image.flaticon.com/icons/svg/464/464743.svg"
-              size="small"
-              centered
-            />
-            <Header as="h3" textAlign="center" style={{ fontSize: "2em" }}>
-              Deals & Promotions
-            </Header>
-            <Header as="h5" textAlign="center" style={{ fontSize: "1.33em" }}>
-              Earn discounts as you eat!
-            </Header>
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
+    {" "}
+    <Header as="h2" textAlign="center" style={{ fontSize: "2em" }}>
+      Enjoy this Eatira App ?
+    </Header>
+    <Header as="h5" textAlign="center" style={{ fontSize: "2em" }}>
+      We'd like to hear your opinion about it!
+    </Header>
+    <br />
+    <Segment
+      inverted
+      textAlign="center"
+      style={{
+        minHeight: "100%",
+        padding: "0em 0em",
+        backgroundImage: `url(https://i.imgur.com/QhaTVVJ.jpg?1)`,
+        backgroundSize: "cover",
+        flex: 1,
+        backgroundPosition: "centre",
+        backgroundRepeat: "no-repeat",
+        height: "70vh",
+        width: "100vw",
+      }}
+      vertical
+    >
+      <Form>
+        <Form.Group widths="equal">
+          <Form.Field
+            id="form-input-control-first-name"
+            control={Input}
+            label="First Name"
+            placeholder="First Name"
+          />
+          <Form.Field
+            id="form-input-control-last-name"
+            control={Input}
+            label="Last Name"
+            placeholder="Last Name"
+          />
+        </Form.Group>
+        <br />
+        <Form.Field
+          id="form-textarea-control-opinion"
+          control={TextArea}
+          label="Opinion"
+          placeholder="Write Something ... "
+        />
+        <br />
+        <Form.Field
+          id="form-input-control-email"
+          control={Input}
+          label="Email"
+          placeholder="email@gmail.com"
+        />
+        <Form.Field
+          id="form-button-control-public"
+          control={Button}
+          color="teal"
+          content="Submit"
+        />
+      </Form>
     </Segment>
     <Segment inverted vertical style={{ padding: "3em 0em" }}>
       <Container textAlign="center">
@@ -256,9 +273,7 @@ const Features = () => (
               <Header textAlign="center" inverted as="h3" content="Help" />
               <List link inverted>
                 <List.Item as="a">FAQ</List.Item>
-                <Link to={ROUTES.CONTACTUS}>
-                  <List.Item as="a">Contact Us</List.Item>
-                </Link>
+                <List.Item as="a">Contact Us</List.Item>
               </List>
             </Grid.Column>
             <Grid.Column floated="right" width={6}>
@@ -282,4 +297,4 @@ const Features = () => (
   </ResponsiveContainer>
 );
 
-export default Features;
+export default ContactUs;

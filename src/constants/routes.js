@@ -10,3 +10,5 @@ export const PROFILE = "/profile";
 export const SAVED_POSTS = "/saved-posts";
 export const ABOUT = "/aboutus";
 export const FEATURES = "/features";
+export const CONTACTUS = "/contactus";
+export const FAQ = "/faq";
