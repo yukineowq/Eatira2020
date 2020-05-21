@@ -107,7 +107,7 @@ class SignInFormBase extends Component {
                 type="password"
               />
               <Button
-                color="orange"
+                color="google plus"
                 fluid
                 size="large"
                 disabled={isInvalid}

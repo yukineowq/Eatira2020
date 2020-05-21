@@ -77,7 +77,7 @@ class DesktopContainer extends Component {
                       as="a"
                       inverted={!fixed}
                       //primary={fixed}
-                      color="red"
+                      color="google plus"
                       style={{ marginLeft: "0.5em" }}
                     >
                       Sign Up
@@ -158,7 +158,7 @@ class MobileContainer extends Component {
                     as="a"
                     inverted
                     style={{ marginLeft: "0.5em" }}
-                    color="red"
+                    color="google plus"
                   >
                     Sign Up
                   </Button>
@@ -255,7 +255,10 @@ const Features = () => (
             <Grid.Column width={5}>
               <Header textAlign="center" inverted as="h3" content="Help" />
               <List link inverted>
-                <List.Item as="a">FAQ</List.Item>
+                <Link to={ROUTES.FAQ}>
+                  <List.Item as="a">FAQ</List.Item>
+                </Link>
+                <br />
                 <Link to={ROUTES.CONTACTUS}>
                   <List.Item as="a">Contact Us</List.Item>
                 </Link>

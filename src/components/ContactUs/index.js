@@ -83,7 +83,7 @@ class DesktopContainer extends Component {
                       as="a"
                       inverted={!fixed}
                       //primary={fixed}
-                      color="red"
+                      color="google plus"
                       style={{ marginLeft: "0.5em" }}
                     >
                       Sign Up
@@ -165,7 +165,7 @@ class MobileContainer extends Component {
                   as="a"
                   inverted
                   style={{ marginLeft: "0.5em" }}
-                  color="red"
+                  color="google plus"
                 >
                   Sign Up
                 </Button>
@@ -201,7 +201,7 @@ const ContactUs = () => (
       Enjoy this Eatira App ?
     </Header>
     <Header as="h5" textAlign="center" style={{ fontSize: "2em" }}>
-      We'd like to hear your opinion about it!
+      We'd like to hear your opinion about it !
     </Header>
     <br />
     <Segment
@@ -220,42 +220,44 @@ const ContactUs = () => (
       }}
       vertical
     >
-      <Form>
-        <Form.Group widths="equal">
+      <Container>
+        <Form>
+          <Form.Group widths="equal">
+            <Form.Field
+              id="form-input-control-first-name"
+              control={Input}
+              label="First Name"
+              placeholder="First Name"
+            />
+            <Form.Field
+              id="form-input-control-last-name"
+              control={Input}
+              label="Last Name"
+              placeholder="Last Name"
+            />
+          </Form.Group>
+          <br />
           <Form.Field
-            id="form-input-control-first-name"
+            id="form-textarea-control-opinion"
+            control={TextArea}
+            label="Opinion"
+            placeholder="Write Something ... "
+          />
+          <br />
+          <Form.Field
+            id="form-input-control-email"
             control={Input}
-            label="First Name"
-            placeholder="First Name"
+            label="Email"
+            placeholder="email@gmail.com"
           />
           <Form.Field
-            id="form-input-control-last-name"
-            control={Input}
-            label="Last Name"
-            placeholder="Last Name"
+            id="form-button-control-public"
+            control={Button}
+            color="instagram"
+            content="Submit"
           />
-        </Form.Group>
-        <br />
-        <Form.Field
-          id="form-textarea-control-opinion"
-          control={TextArea}
-          label="Opinion"
-          placeholder="Write Something ... "
-        />
-        <br />
-        <Form.Field
-          id="form-input-control-email"
-          control={Input}
-          label="Email"
-          placeholder="email@gmail.com"
-        />
-        <Form.Field
-          id="form-button-control-public"
-          control={Button}
-          color="teal"
-          content="Submit"
-        />
-      </Form>
+        </Form>
+      </Container>
     </Segment>
     <Segment inverted vertical style={{ padding: "3em 0em" }}>
       <Container textAlign="center">
@@ -272,7 +274,10 @@ const ContactUs = () => (
             <Grid.Column width={5}>
               <Header textAlign="center" inverted as="h3" content="Help" />
               <List link inverted>
-                <List.Item as="a">FAQ</List.Item>
+                <Link to={ROUTES.FAQ}>
+                  <List.Item as="a">FAQ</List.Item>
+                </Link>
+                <br />
                 <List.Item as="a">Contact Us</List.Item>
               </List>
             </Grid.Column>

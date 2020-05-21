@@ -130,7 +130,7 @@ class SignUpFormBase extends Component {
               />
 
               <Button
-                color="orange"
+                color="google plus"
                 fluid
                 size="large"
                 disabled={isInvalid}
