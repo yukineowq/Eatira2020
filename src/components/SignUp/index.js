@@ -100,7 +100,7 @@ class SignUpFormBase extends Component {
               />
               <Form.Input
                 fluid
-                icon="lock"
+                icon="mail"
                 iconPosition="left"
                 name="email"
                 value={email}
