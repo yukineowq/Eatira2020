@@ -198,43 +198,29 @@ const FAQ = () => (
       Eatira's FAQ <br /> Frequently Asked Questions
     </Header>
     <br />
-    <Segment
-      inverted
-      textAlign="center"
-      style={{
-        minHeight: "100%",
-        padding: "0em 0em",
-        backgroundImage: `url(https://i.imgur.com/QhaTVVJ.jpg?1)`,
-        backgroundSize: "cover",
-        flex: 1,
-        backgroundPosition: "centre",
-        backgroundRepeat: "no-repeat",
-        height: "70vh",
-        width: "100vw",
-      }}
-      vertical
-    >
-      <Container>
-        <Message>
-          <p>
-            1. Am I able to refer to a friend to sign up for an Eatira account?
-          </p>
-        </Message>
-        <Message>
-          <p> 2. How do I make reservations with the selected restaurant?</p>
-        </Message>
-        <Message>
-          <p> 3. Am I awarded when I make a reservation through Eatira?</p>
-        </Message>
-        <Message>
-          <p> 4. How do I redeem Eatira-Points?</p>
-        </Message>
-        <Message>
-          <p> 5. Why should I use Chope?</p>
-        </Message>
-        <Button color="instagram">Learn More</Button>
-      </Container>
-    </Segment>
+    <Container>
+      <Message>
+        <p textAlign="center">
+          1. Am I able to refer to a friend to sign up for an Eatira account?
+        </p>
+      </Message>
+      <Message>
+        <p> 2. How do I make reservations with the selected restaurant?</p>
+      </Message>
+      <Message>
+        <p> 3. Am I awarded when I make a reservation through Eatira?</p>
+      </Message>
+      <Message>
+        <p> 4. How do I redeem Eatira-Points?</p>
+      </Message>
+      <Message>
+        <p> 5. Why should I use Chope?</p>
+      </Message>
+      <Button centered color="instagram">
+        Learn More
+      </Button>
+    </Container>
+    <br />
     <Segment inverted vertical style={{ padding: "3em 0em" }}>
       <Container textAlign="center">
         <Grid divided inverted stackable>
