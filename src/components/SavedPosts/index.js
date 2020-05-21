@@ -1,12 +1,17 @@
 import React from "react";
 
 import { withAuthorization } from "../Session";
+import { Responsive, Container } from "semantic-ui-react";
 
 const SavedPostPage = () => (
-  <div>
-    <h1>Saved Post Page</h1>
-    <p>The saved post Page is accessible by every signed in user.</p>
-  </div>
+  <Responsive>
+    <Container>
+      <div>
+        <h1>Saved Posts Page</h1>
+        <p>The Saved Posts Page is accessible by every signed in user.</p>
+      </div>
+    </Container>
+  </Responsive>
 );
 
 const condition = (authUser) => !!authUser;

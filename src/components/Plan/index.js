@@ -1,12 +1,17 @@
 import React from "react";
 
 import { withAuthorization } from "../Session";
+import { Responsive, Container } from "semantic-ui-react";
 
 const PlanPage = () => (
-  <div>
-    <h1>Plan Page</h1>
-    <p>The plan Page is accessible by every signed in user.</p>
-  </div>
+  <Responsive>
+    <Container>
+      <div>
+        <h1>Plan A Meal</h1>
+        <p>The Plan A Meal Page is accessible by every signed in user.</p>
+      </div>
+    </Container>
+  </Responsive>
 );
 
 const condition = (authUser) => !!authUser;

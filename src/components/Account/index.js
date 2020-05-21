@@ -2,15 +2,20 @@ import React from "react";
 
 import { AuthUserContext, withAuthorization } from "../Session";
 import PasswordChangeForm from "../PasswordChange";
+import { Container, Responsive } from "semantic-ui-react";
 
 const AccountPage = () => (
   <AuthUserContext.Consumer>
     {(authUser) => (
-      <div>
-        <h1>Account: {authUser.email}</h1>
-        <p>Change Password</p>
-        <PasswordChangeForm />
-      </div>
+      <Responsive>
+        <Container>
+          <h1>Account: {authUser.email}</h1>
+          <p>
+            <strong>Change Password</strong>
+          </p>
+          <PasswordChangeForm />
+        </Container>
+      </Responsive>
     )}
   </AuthUserContext.Consumer>
 );
