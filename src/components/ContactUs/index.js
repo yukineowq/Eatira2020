@@ -12,7 +12,6 @@ import {
   List,
   Menu,
   Responsive,
-  Select,
   Segment,
   Sidebar,
   TextArea,
