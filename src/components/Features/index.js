@@ -59,7 +59,9 @@ class DesktopContainer extends Component {
               </Link>
               <br />
 
-              <Menu.Item as="a">Features</Menu.Item>
+              <Link to={ROUTES.FEATURES}>
+                <Menu.Item as="a">Features</Menu.Item>
+              </Link>
               <Link to={ROUTES.ABOUT}>
                 <Menu.Item as="a">About</Menu.Item>
               </Link>

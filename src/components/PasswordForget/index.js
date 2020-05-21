@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-
 import { withFirebase } from "../Firebase";
 import * as ROUTES from "../../constants/routes";
 import { Button, Form, Grid, Header, Image, Segment } from "semantic-ui-react";
