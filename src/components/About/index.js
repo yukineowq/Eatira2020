@@ -260,8 +260,8 @@ const About = () => (
               <Header
                 textAlign="center"
                 inverted
-                as="h4"
-                content="© Eatira 2020 All rights reserved."
+                as="h5"
+                content="Eatira © 2020"
               />
             </Grid.Column>
           </Grid.Row>
