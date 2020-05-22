@@ -177,18 +177,21 @@ ResponsiveContainer.propTypes = {
 };
 
 const HomePage = () => (
-  <div
-    style={{
-      minHeight: 700,
-      padding: "0.2em 0em",
-      backgroundImage: `url(https://i.imgur.com/MbgVZhp.jpg)`,
-      backgroundSize: "cover",
-      backgroundPosition: "centre",
-      height: "100%",
-      width: "100",
-    }}
-  >
-    <ResponsiveContainer>
+  <ResponsiveContainer>
+    <Segment
+      inverted
+      textAlign="center"
+      style={{
+        minHeight: 700,
+        padding: "0em 0em",
+        backgroundImage: `url(https://webgradients.com/public/webgradients_png/004%20Juicy%20Peach.png)`,
+        backgroundSize: "cover",
+        backgroundPosition: "centre",
+        // backgroundRepeat: "no-repeat",
+        height: "100%",
+        width: "100",
+      }}
+    >
       <br />
       <Container>
         <div class="ui form">
@@ -320,15 +323,15 @@ const HomePage = () => (
                   textAlign="center"
                   inverted
                   as="h5"
-                  content="Eatira © 2020"
+                  content="© Eatira 2020"
                 />
               </Grid.Column>
             </Grid.Row>
           </Grid>
         </Container>
       </Segment>
-    </ResponsiveContainer>
-  </div>
+    </Segment>
+  </ResponsiveContainer>
 );
 
 const condition = (authUser) => !!authUser;

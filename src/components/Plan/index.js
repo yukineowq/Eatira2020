@@ -19,6 +19,7 @@ import {
 import SignOutButton from "../SignOut";
 import { Link } from "react-router-dom";
 import * as ROUTES from "../../constants/routes";
+
 const getWidth = () => {
   const isSSR = typeof window === "undefined";
 
@@ -309,9 +310,11 @@ const PlanPage = () => (
           <CuisineSelection />
           <h4>Select Type :</h4>
           <TypeSelection />
+          <br />
         </div>
       </div>
     </Container>
+
     <Segment inverted vertical style={{ padding: "3em 0em" }}>
       <Container textAlign="center">
         <Grid divided inverted stackable>
@@ -327,7 +330,7 @@ const PlanPage = () => (
                 textAlign="center"
                 inverted
                 as="h5"
-                content="Eatira © 2020"
+                content="© Eatira 2020"
               />
             </Grid.Column>
           </Grid.Row>

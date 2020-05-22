@@ -277,7 +277,7 @@ const Features = () => (
                 textAlign="center"
                 inverted
                 as="h4"
-                content="© Eatira 2020 All rights reserved."
+                content="© Eatira 2020"
               />
             </Grid.Column>
           </Grid.Row>

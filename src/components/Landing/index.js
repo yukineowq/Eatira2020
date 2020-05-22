@@ -364,7 +364,7 @@ const HomepageLayout = () => (
                 textAlign="center"
                 inverted
                 as="h5"
-                content="Eatira © 2020"
+                content="© Eatira 2020"
               />
             </Grid.Column>
           </Grid.Row>

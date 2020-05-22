@@ -178,17 +178,16 @@ const AccountPage = () => (
     <br />
     <AuthUserContext.Consumer>
       {(authUser) => (
-        <Responsive>
-          <Container>
-            <h1>Account: {authUser.email}</h1>
-            <p>
-              <strong>Change Password</strong>
-            </p>
-            <PasswordChangeForm />
-          </Container>
-        </Responsive>
+        <Container>
+          <h1>Account: {authUser.email}</h1>
+          <p>
+            <strong>Change Password</strong>
+          </p>
+          <PasswordChangeForm />
+        </Container>
       )}
-    </AuthUserContext.Consumer>
+    </AuthUserContext.Consumer>{" "}
+    <br />
     <Segment inverted vertical style={{ padding: "3em 0em" }}>
       <Container textAlign="center">
         <Grid divided inverted stackable>
@@ -204,7 +203,7 @@ const AccountPage = () => (
                 textAlign="center"
                 inverted
                 as="h5"
-                content="Eatira © 2020"
+                content="© Eatira 2020"
               />
             </Grid.Column>
           </Grid.Row>

@@ -178,9 +178,10 @@ const SavedPosts = () => (
     <Container>
       <div>
         <h1>Saved Posts</h1>
-        <p>The Saved posts Page is accessible by every signed in user.</p>
+        <p>The Saved Posts Page is accessible by every signed in user.</p>
       </div>
     </Container>
+    <br />
     <Segment inverted vertical style={{ padding: "3em 0em" }}>
       <Container textAlign="center">
         <Grid divided inverted stackable>
@@ -196,7 +197,7 @@ const SavedPosts = () => (
                 textAlign="center"
                 inverted
                 as="h5"
-                content="Eatira © 2020"
+                content="© Eatira 2020"
               />
             </Grid.Column>
           </Grid.Row>
