@@ -12,3 +12,4 @@ export const ABOUT = "/aboutus";
 export const FEATURES = "/features";
 export const CONTACTUS = "/contactus";
 export const FAQ = "/faq";
+export const FAQANSWERS = "/faqAnswers";

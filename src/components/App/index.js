@@ -15,6 +15,7 @@ import AboutPage from "../About";
 import FeaturesPage from "../Features";
 import ContactUsPage from "../ContactUs";
 import FAQPage from "../FAQ";
+import FAQAnswersPage from "../FAQAnswers";
 import * as ROUTES from "../../constants/routes";
 import { withAuthentication } from "../Session";
 import "semantic-ui-css/semantic.min.css";
@@ -36,6 +37,7 @@ const App = () => (
       <Route path={ROUTES.FEATURES} component={FeaturesPage} />
       <Route path={ROUTES.CONTACTUS} component={ContactUsPage} />
       <Route path={ROUTES.FAQ} component={FAQPage} />
+      <Route path={ROUTES.FAQANSWERS} component={FAQAnswersPage} />
     </div>
   </Router>
 );

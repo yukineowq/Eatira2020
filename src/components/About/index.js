@@ -228,7 +228,7 @@ const About = () => (
       </Card>
       <br />
     </Segment>
-    <Segment inverted vertical style={{ padding: "3em 0em" }}>
+    <Segment inverted vertical style={{ padding: "4em 0em" }}>
       <Container textAlign="center">
         <Grid divided inverted stackable>
           <Grid.Row>

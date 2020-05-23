@@ -9,6 +9,7 @@ import {
   Image,
   List,
   Menu,
+  Message,
   Responsive,
   Segment,
   Sidebar,
@@ -131,7 +132,9 @@ class MobileContainer extends Component {
             <Image src="https://i.imgur.com/q3ekeqj.jpg" size="tiny" circular />
           </Link>
           <br />
-          <Menu.Item as="a">Features</Menu.Item>
+          <Link to={ROUTES.FEATURES}>
+            <Menu.Item as="a">Features</Menu.Item>
+          </Link>
           <Link to={ROUTES.ABOUT}>
             <Menu.Item as="a">About</Menu.Item>
           </Link>
@@ -144,31 +147,28 @@ class MobileContainer extends Component {
         </Sidebar>
 
         <Sidebar.Pusher dimmed={sidebarOpened}>
-          <Container>
-            <Menu inverted pointing secondary size="large">
-              <Menu.Item onClick={this.handleToggle}>
-                <Icon name="sidebar" color="black" />
-              </Menu.Item>
-              <Menu.Item position="right">
-                <Link to={ROUTES.SIGN_IN}>
-                  <Button as="a" inverted color="facebook">
-                    Log In
-                  </Button>
-                </Link>
-                <Link to={ROUTES.SIGN_UP}>
-                  <Button
-                    as="a"
-                    inverted
-                    style={{ marginLeft: "0.5em" }}
-                    color="google plus"
-                  >
-                    Sign Up
-                  </Button>
-                </Link>
-              </Menu.Item>
-            </Menu>
-          </Container>
-
+          <Menu inverted pointing secondary size="large">
+            <Menu.Item onClick={this.handleToggle}>
+              <Icon name="sidebar" color="black" />
+            </Menu.Item>
+            <Menu.Item position="right">
+              <Link to={ROUTES.SIGN_IN}>
+                <Button as="a" inverted color="facebook">
+                  Log In
+                </Button>
+              </Link>
+              <Link to={ROUTES.SIGN_UP}>
+                <Button
+                  as="a"
+                  inverted
+                  style={{ marginLeft: "0.5em" }}
+                  color="google plus"
+                >
+                  Sign Up
+                </Button>
+              </Link>
+            </Menu.Item>
+          </Menu>
           {children}
         </Sidebar.Pusher>
       </Responsive>
@@ -191,70 +191,38 @@ ResponsiveContainer.propTypes = {
   children: PropTypes.node,
 };
 
-const Features = () => (
+const FAQ = () => (
   <ResponsiveContainer>
-    <Segment style={{ padding: "4em 0em" }} vertical>
-      <Header as="h3" textAlign="center" style={{ fontSize: "2em" }}>
-        Plan A Meal
-      </Header>
+    <Header as="h2" textAlign="center" style={{ fontSize: "2em" }}>
+      Eatira's FAQ Answers <br /> Frequently Asked Questions
+    </Header>
+    <br />
+    <Container>
+      <Message>
+        1. Yes, and we encourage you to do so! Once you follow your friend's
+        account, both you and your friend are able to earn loyalty points from
+        Eatira.
+      </Message>
+      <Message>2. (In Progress ...)</Message>
+      <Message>3. (In Progress ...)</Message>
+      <Message>4. (In Progress ...)</Message>
+      <Message>
+        5.
+        <ul>
+          <li>
+            Convenience - Plan your meal destination with your friends 24/7 on
+            the go!
+          </li>
+          <li>
+            Personalised Experience - Restaurant reviews, Restaurant type and
+            deals curated specially for you.
+          </li>
+          <li>Rewarding - Earn points as you eat!</li>
+        </ul>
+      </Message>
       <br />
-      <Grid container stackable verticalAlign="middle">
-        <Grid.Row>
-          <Grid.Column width={4}>
-            <Image
-              src="https://image.flaticon.com/icons/svg/1889/1889952.svg"
-              size="small"
-              centered
-            />
-            <Header as="h3" textAlign="center" style={{ fontSize: "2em" }}>
-              Location
-            </Header>
-            <Header as="h5" textAlign="center" style={{ fontSize: "1.33em" }}>
-              Auto-generated location through Google Map API.
-            </Header>
-          </Grid.Column>
-          <Grid.Column width={4}>
-            <Image
-              src="https://image.flaticon.com/icons/svg/2942/2942827.svg"
-              size="small"
-              centered
-            />
-            <Header as="h3" textAlign="center" style={{ fontSize: "2em" }}>
-              Date & Time
-            </Header>
-            <Header as="h5" textAlign="center" style={{ fontSize: "1.33em" }}>
-              Schedule a date and time to meet for a meal.
-            </Header>
-          </Grid.Column>
-          <Grid.Column floated="right" width={4}>
-            <Image
-              src="https://image.flaticon.com/icons/svg/2937/2937833.svg"
-              size="small"
-              centered
-            />
-            <Header as="h3" textAlign="center" style={{ fontSize: "2em" }}>
-              Friends
-            </Header>
-            <Header as="h5" textAlign="center" style={{ fontSize: "1.33em" }}>
-              Add your friends into your meal schedule.
-            </Header>
-          </Grid.Column>
-          <Grid.Column floated="right" width={4}>
-            <Image
-              src="https://image.flaticon.com/icons/svg/464/464743.svg"
-              size="small"
-              centered
-            />
-            <Header as="h3" textAlign="center" style={{ fontSize: "2em" }}>
-              Deals
-            </Header>
-            <Header as="h5" textAlign="center" style={{ fontSize: "1.33em" }}>
-              Earn discounts as you eat!
-            </Header>
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
-    </Segment>
+    </Container>
+    <br />
     <Segment inverted vertical style={{ padding: "3em 0em" }}>
       <Container textAlign="center">
         <Grid divided inverted stackable>
@@ -272,7 +240,7 @@ const Features = () => (
               <List link inverted>
                 <Link to={ROUTES.FAQ}>
                   <List.Item as="a">FAQ</List.Item>
-                </Link>
+                </Link>{" "}
                 <br />
                 <Link to={ROUTES.CONTACTUS}>
                   <List.Item as="a">Contact Us</List.Item>
@@ -289,7 +257,7 @@ const Features = () => (
               <Header
                 textAlign="center"
                 inverted
-                as="h4"
+                as="h5"
                 content="© Eatira 2020"
               />
             </Grid.Column>
@@ -300,4 +268,4 @@ const Features = () => (
   </ResponsiveContainer>
 );
 
-export default Features;
+export default FAQ;

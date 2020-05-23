@@ -193,7 +193,6 @@ ResponsiveContainer.propTypes = {
 
 const FAQ = () => (
   <ResponsiveContainer>
-    {" "}
     <Header as="h2" textAlign="center" style={{ fontSize: "2em" }}>
       Eatira's FAQ <br /> Frequently Asked Questions
     </Header>
@@ -214,11 +213,13 @@ const FAQ = () => (
         <p> 4. How do I redeem Eatira-Points?</p>
       </Message>
       <Message>
-        <p> 5. Why should I use Chope?</p>
+        <p> 5. Why should I use Eatira?</p>
       </Message>
-      <Button centered color="instagram">
-        Learn More
-      </Button>
+      <Link to={ROUTES.FAQANSWERS}>
+        <Button centered color="instagram">
+          Learn More
+        </Button>
+      </Link>
     </Container>
     <br />
     <Segment inverted vertical style={{ padding: "3em 0em" }}>
