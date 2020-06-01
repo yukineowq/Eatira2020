@@ -1,4 +1,4 @@
-# Eatira ![alt text](https://i.imgur.com/hy5nHIpt.png) 
+# Orbital 2020 - Eatira ![alt text](https://i.imgur.com/hy5nHIpt.png) 
 _Last Updated on May 21, 2020_
 
 ### Purpose
