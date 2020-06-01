@@ -29,3 +29,6 @@ This Eatira Web Application Project is meant for Computing students at the Natio
 5. Redux
 6. Google Map API
 7. BootStrap
+
+### Setting Up
+...
