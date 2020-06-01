@@ -30,5 +30,5 @@ This Eatira Web Application Project is meant for Computing students at the Natio
 6. Google Map API
 7. BootStrap
 
-### Setting Up
+# Setting Up
 ...
