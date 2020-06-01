@@ -2,7 +2,7 @@
 _Last Updated on May 21, 2020_
 
 ### Purpose
-This Eatira Web Application Project is meant for Computing students at the National University of Singapore (NUS) that are undertaking CP2106 - Independent Software Development Project (Orbital) in Summer 2020. Eatira will enable users to create their personal food preferences profile, along with the Plan A Meal tab to select date, time and location for them to create a meal event. 
+This Eatira Web Application Project is meant for Computing students at the National University of Singapore (NUS) that are undertaking **CP2106 - Independent Software Development Project (Orbital)** in Summer 2020. Eatira will enable users to create their personal food preferences profile, along with the Plan A Meal tab to select date, time and location for them to create a meal event. 
 
 ### Features
 
